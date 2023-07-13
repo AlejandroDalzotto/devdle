@@ -1,5 +1,7 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
+import { Navbar } from "~/components/navbar";
+import { GameProvider } from "~/context/game-provider";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -13,5 +15,13 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 };
 
 export default component$(() => {
-  return <Slot />;
+
+  return (
+    <GameProvider>
+      <Navbar />
+      <main class="relative bg-[#fef9f1] w-screen h-[calc(100vh-5rem)] ">
+        <Slot />
+      </main>
+    </GameProvider>
+  );
 });
