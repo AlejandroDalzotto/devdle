@@ -1,5 +1,6 @@
 import { $, component$, useContext, useSignal } from "@builder.io/qwik";
 import { GameContext } from "~/context/game.context";
+import { icons } from "~/data";
 
 export const GameForm = component$(() => {
 
@@ -16,14 +17,18 @@ export const GameForm = component$(() => {
 
       if (inputValue.value.toLowerCase() === gameState.currentIcon?.name.toLowerCase()) {
         gameState.isIconHidden = false
-        gameState.streak += 1
+        gameState.streak++
         gameState.state = "success"
+        gameState.currentIcon.state = "finished"
+
+        const iconFinished = icons.find(i => i.name === inputValue.value)
+        iconFinished!.state = "finished"
 
         gameState.points += 1 * gameState.streak
         gameState.icons = [...gameState.icons].filter(i => i.state === "incomplete" && i.name !== gameState.currentIcon?.name)
       } else {
         gameState.state = "failed"
-        gameState.hearts -= 1
+        gameState.hearts--
 
         if (gameState.hearts === 0) {
           gameState.userCondition = "defeat"

@@ -6,6 +6,7 @@ import { ModalInformation } from "~/components/modal-information";
 import { GameForm } from "~/components/game-form";
 import { GameModalDefeated } from "~/components/game-modal-defeated";
 import { GameModalVictory } from "~/components/game-modal-victory";
+import { HeartIcon, InfoIcon } from "~/components/icons";
 
 export default component$(() => {
 
@@ -30,10 +31,12 @@ export default component$(() => {
       {gameState.icons.length === 0 && <GameModalVictory />}
       <div class="w-full p-4 relative flex flex-col items-center flex-grow">
         <div class="h-14 w-full flex justify-end">
-          <button onClick$={() => showModal.value = !showModal.value} class={`animate-jump p-2 rounded fill-neutral-800 grid place-content-center ${!gameState.isIconHidden ? "block" : "hidden"}`}>
-            <svg width="50" height="50">
-              <use xlink: href="./icons.svg#info" />
-            </svg>
+          <button
+            onClick$={() => showModal.value = !showModal.value}
+            class={`animate-jump p-2 rounded fill-neutral-800 grid place-content-center ${!gameState.isIconHidden ? "block" : "hidden"}`}
+            aria-label="See icon information"
+          >
+            <InfoIcon />
           </button>
         </div>
         {gameState.icons.length > 0 && gameState.currentIcon && (
@@ -57,9 +60,7 @@ export default component$(() => {
           {Array.from({ length: gameState.hearts }, (_, idx) => {
             return (
               <div key={idx}>
-                <svg width="30" height="30" class="fill-red-500 inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z" />
-                </svg>
+                <HeartIcon />
               </div>
             )
           })}

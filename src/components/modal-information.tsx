@@ -13,7 +13,7 @@ export const ModalInformation = component$(({ iconName, signal }: Props) => {
   const item = technologiesInformation.find(i => i.name === iconName)
 
   return (
-    <div onClick$={() => signal.value = false} class="animate-fade duration-75 h-screen w-screen flex items-center justify-center bg-black/30 absolute z-10">
+    <div onClick$={() => signal.value = false} class="animate-fade duration-75 h-screen w-screen flex items-center justify-center bg-black/30 absolute z-10 -top-20 left-0">
       <section class="gap-y-4 animate-jump p-3 rounded bg-[#e3d4d0] h-auto max-w-sm md:max-w-xl flex flex-col items-center relative z-20">
         <header class="flex items-center justify-between w-full relative">
           <div>
