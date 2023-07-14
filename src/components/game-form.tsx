@@ -1,6 +1,7 @@
 import { $, component$, useContext, useSignal } from "@builder.io/qwik";
 import { GameContext } from "~/context/game.context";
 import { icons } from "~/data";
+import { SendIcon } from "./icons";
 
 export const GameForm = component$(() => {
 
@@ -43,18 +44,20 @@ export const GameForm = component$(() => {
   });
 
   return (
-    <form preventdefault: submit onSubmit$={handleGameResult} class="flex gap-x-2">
+    <form preventdefault:submit onSubmit$={handleGameResult} class="flex gap-x-2 my-10">
       <input
         disabled={!gameState.isIconHidden}
         onInput$={handleChange}
         value={inputValue.value}
         autoComplete="off"
         name="icon"
-        class="md:w-[500px] bg-transparent text-2xl outline-none transition-all focus:ring-2 focus:ring-neutral-800 focus:shadow py-3 px-4 rounded w-[95%] mx-auto block placeholder:text-neutral-600 placeholder:font-semibold text-neutral-800 disabled:opacity-75"
+        class="md:w-[500px] bg-neutral-900 text-2xl outline-none py-3 px-4 rounded w-[90%] placeholder:text-neutral-600 placeholder:font-semibold text-neutral-50 disabled:opacity-75"
         type="text"
         placeholder="¿De qué es este icono?"
       />
-      <button disabled={!gameState.isIconHidden} type="submit" class="bg-transparent px-3 py-1 rounded text-xl font-bold border-2 border-neutral-800 text-neutral-800 disabled:opacity-75">Submit</button>
+      <button aria-label="Verify icon name written in input" disabled={!gameState.isIconHidden} type="submit" class="p-2 aspect-square w-14 grid place-content-center rounded text-xl font-bold border-2 border-crimson-500 transition-colors enabled:hover:fill-neutral-950 enabled:hover:bg-crimson-500 fill-neutral-50 disabled:opacity-75">
+        <SendIcon />
+      </button>
     </form>
   )
 });

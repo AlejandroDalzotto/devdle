@@ -10,8 +10,8 @@ export default component$(() => {
   return (
     <section class="p-4 flex flex-col gap-y-10">
       <header>
-        <h2 class="text-3xl font-bold text-neutral-800 text-center mb-4">Tus iconos</h2>
-        <p class="text-neutral-700 font-medium text-lg text-center [text-wrap:balance]">En esta sala apareceran todos los iconos que hayas encontrado, puedes acceder a su información desde aquí de una forma más comoda 😄</p>
+        <h2 class="text-3xl font-bold text-crimson-500 text-center mb-4">Tus iconos</h2>
+        <p class="text-neutral-50 font-medium text-lg text-center [text-wrap:balance]">En esta sala apareceran todos los iconos que hayas encontrado, puedes acceder a su información desde aquí de una forma más comoda 😄</p>
       </header>
       <article class="flex flex-wrap gap-4 container mx-auto">
         {finishedIcons.map((icon, idx) => {

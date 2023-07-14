@@ -6,12 +6,14 @@ import { ModalInformation } from "~/components/modal-information";
 import { GameForm } from "~/components/game-form";
 import { GameModalDefeated } from "~/components/game-modal-defeated";
 import { GameModalVictory } from "~/components/game-modal-victory";
-import { HeartIcon, InfoIcon } from "~/components/icons";
+import { ArrowRightIcon, HeartIcon, InfoIcon, StatisticsIcon } from "~/components/icons";
+import { GameModalStats } from "~/components/game-modal-stats";
 
 export default component$(() => {
 
   const gameState = useContext(GameContext)
-  const showModal = useSignal(false)
+  const showModalInformation = useSignal(false)
+  const showModalStats = useSignal(false)
 
   const changeIconToNext = $(() => {
     gameState.isIconHidden = true
@@ -25,15 +27,16 @@ export default component$(() => {
   })
 
   return (
-    <section class="h-full w-full max-w-max mx-auto flex flex-col items-center justify-center gap-y-20 pb-20">
-      {showModal.value && <ModalInformation signal={showModal} iconName={gameState.currentIcon!.name} />}
+    <section class="h-full w-full max-w-max mx-auto flex flex-col items-center justify-center pb-40">
+      {showModalInformation.value && <ModalInformation signal={showModalInformation} iconName={gameState.currentIcon!.name} />}
+      {showModalStats.value && <GameModalStats signal={showModalStats} />}
       {gameState.hearts === 0 && <GameModalDefeated />}
       {gameState.icons.length === 0 && <GameModalVictory />}
       <div class="w-full p-4 relative flex flex-col items-center flex-grow">
         <div class="h-14 w-full flex justify-end">
           <button
-            onClick$={() => showModal.value = !showModal.value}
-            class={`animate-jump p-2 rounded fill-neutral-800 grid place-content-center ${!gameState.isIconHidden ? "block" : "hidden"}`}
+            onClick$={() => showModalInformation.value = !showModalInformation.value}
+            class={`animate-jump p-2 rounded fill-neutral-50 grid place-content-center ${!gameState.isIconHidden ? "block" : "hidden"}`}
             aria-label="See icon information"
           >
             <InfoIcon />
@@ -46,35 +49,39 @@ export default component$(() => {
         )}
         {gameState.icons.length === 0 && <p class="text-neutral-800 font-medium text-center text-xl w-52 h-52">¡Vaya! Parece que te has completado todo lo que habia aquí, eres muy bueno</p>}
       </div>
+      <div class="flex gap-x-3 items-center my-10 w-full justify-center">
+        {Array.from({ length: gameState.hearts }, (_, idx) => {
+          return (
+            <div key={idx} class={`animate-pulse delay-[${idx * 3}00ms]`}>
+              <HeartIcon />
+            </div>
+          )
+        })}
+      </div>
 
       <GameForm />
 
-      <div class="h-10 w-full flex items-center justify-around max-w-lg px-4">
+      <div class="h-14 relative w-full max-w-lg px-4 flex items-center justify-center gap-x-3">
         <button
           onClick$={changeIconToNext}
-          class="font-black text-xl text-neutral-800 py-2 px-4 rounded bg-neutral-300 focus:brightness-75 hover:text-[#fef9f1] hover:bg-neutral-800"
+          class="h-full py-2 px-3 w-fit flex gap-x-3 items-center rounded text-xl font-bold border-2 border-crimson-500 transition-colors hover:fill-neutral-950 hover:text-neutral-950 hover:bg-crimson-500 fill-neutral-50 text-neutral-50"
         >
           Siguiente
+          <ArrowRightIcon />
         </button>
-        <div class="flex gap-x-3 items-center">
-          {Array.from({ length: gameState.hearts }, (_, idx) => {
-            return (
-              <div key={idx}>
-                <HeartIcon />
-              </div>
-            )
-          })}
-        </div>
-      </div>
-      <div class="w-fit h-9">
-        {gameState.icons.length > 0 && <p class="text-center [text-wrap:balance] font-semibold text-3xl text-neutral-800">Te faltan {gameState.icons.length} iconos por adivinar 😮</p>}
+        <button
+          onClick$={() => showModalStats.value = !showModalStats.value}
+          class="p-2 aspect-square h-full grid place-content-center rounded text-xl font-bold border-2 border-crimson-500 transition-colors enabled:hover:fill-neutral-950 enabled:hover:bg-crimson-500 fill-neutral-50"
+        >
+          <StatisticsIcon />
+        </button>
       </div>
     </section>
   );
 });
 
 export const head: DocumentHead = {
-  title: "Home | Devdle",
+  title: "Inicio | Devdle",
   meta: [
     {
       name: "description",

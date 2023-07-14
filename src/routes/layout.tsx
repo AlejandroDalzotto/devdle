@@ -19,7 +19,7 @@ export default component$(() => {
   return (
     <GameProvider>
       <Navbar />
-      <main class="relative bg-[#fef9f1] w-screen h-[calc(100vh-5rem)] ">
+      <main class="relative bg-neutral-950 w-screen min-h-[calc(100vh-5rem)] ">
         <Slot />
       </main>
     </GameProvider>
