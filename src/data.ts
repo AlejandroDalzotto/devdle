@@ -1,5 +1,5 @@
 
-export type TechnologieType = "lenguaje de programación" | "framework" | "librería" | "biblioteca" | "plataforma" | "herramienta" | "sistema operativo" | "entorno de ejecución" | "base de datos"
+export type TechnologieType = "lenguaje de programación" | "framework" | "librería" | "biblioteca" | "plataforma" | "herramienta" | "sistema operativo" | "entorno de ejecución" | "base de datos" | "empresa"
 
 export interface Icon {
   name: string
@@ -8,7 +8,7 @@ export interface Icon {
   state: "finished" | "incomplete",
 }
 
-export interface IconInformation extends Pick<Icon, "name" | "color" | "url"> {
+export interface IconInformation extends Omit<Icon, "state"> {
   description: string
   type: TechnologieType
   docs: string
@@ -317,6 +317,106 @@ export const technologiesInformation: IconInformation[] = [
     docs: "https://www.php.net/",
     usage: ["Desarrollo de aplicaciones web dinámicas"],
   },
+  {
+    title: "Svelte",
+    name: "Svelte",
+    url: "https://cdn.simpleicons.org/svelte",
+    color: "#FF3E00",
+    description: "Svelte es un framework de desarrollo web de código abierto que permite construir aplicaciones web interactivas y de alto rendimiento.\nA diferencia de otros frameworks como React o Vue, Svelte se enfoca en compilar el código durante el proceso de compilación en lugar de ejecutarlo en tiempo de ejecución en el navegador.",
+    type: "framework",
+    docs: "https://svelte.dev/docs",
+    usage: ["Desarrollo web", "Componentes de interfaz de usuario"],
+  },
+  {
+    title: "Google",
+    name: "google",
+    url: "https://cdn.simpleicons.org/google",
+    color: "#4285F4",
+    description: "Google es una empresa multinacional estadounidense de tecnología que se especializa en servicios y productos relacionados con Internet. Fundada en 1998, Google ha crecido hasta convertirse en una de las compañías más grandes e influyentes del mundo.",
+    type: "empresa",
+    docs: "https://www.google.com/",
+    usage: ["Motor de búsqueda", "Servicios en línea", "Computación en la nube"],
+  },
+  {
+    title: "Deno",
+    name: "deno",
+    url: "https://cdn.simpleicons.org/deno",
+    color: "#000000",
+    description: "Deno es un entorno de ejecución para JavaScript y TypeScript basado en el motor de JavaScript V8. Fue creado por Ryan Dahl, quien también creó Node.js, y se enfoca en abordar algunas limitaciones y desafíos asociados con Node.js.",
+    type: "entorno de ejecución",
+    docs: "https://deno.land/manual",
+    usage: ["Scripting en el lado del servidor", "Herramientas de línea de comandos"],
+  },
+  {
+    title: "Scala",
+    name: "scala",
+    url: "https://cdn.simpleicons.org/scala",
+    color: "#DC322F",
+    description: "Scala es un lenguaje de programación multiparadigma diseñado para combinar los conceptos de programación orientada a objetos y programación funcional. Fue creado en 2004 y se ejecuta en la máquina virtual de Java (JVM).",
+    type: "lenguaje de programación",
+    docs: "https://docs.scala-lang.org/",
+    usage: ["Desarrollo backend", "Análisis de datos"],
+  },
+  {
+    title: "Go",
+    name: "go",
+    url: "https://cdn.simpleicons.org/go",
+    color: "#00ADD8",
+    description: "Go, también conocido como Golang, es un lenguaje de programación creado por Google. Es un lenguaje de programación de propósito general que se centra en la simplicidad, la eficiencia y la concurrencia.",
+    type: "lenguaje de programación",
+    docs: "https://golang.org/doc/",
+    usage: ["Programación en el lado del servidor", "Redes"],
+  },
+  {
+    title: "Dart",
+    name: "dart",
+    url: "https://cdn.simpleicons.org/dart",
+    color: "#0175C2",
+    description: "Dart es un lenguaje de programación desarrollado por Google. Es un lenguaje orientado a objetos y de tipado estático, diseñado para ser fácil de aprender, eficiente y adecuado para desarrollar aplicaciones web, móviles y de servidor.",
+    type: "lenguaje de programación",
+    docs: "https://dart.dev/guides",
+    usage: ["Desarrollo multiplataforma", "Aplicaciones móviles"],
+  },
+  {
+    title: "Flutter",
+    name: "flutter",
+    url: "https://cdn.simpleicons.org/flutter",
+    color: "#02569B",
+    description: "Flutter es un framework de desarrollo de aplicaciones móviles de código abierto creado por Google. Utiliza el lenguaje de programación Dart y permite construir aplicaciones nativas de alta calidad para iOS, Android, web y escritorio desde una sola base de código.",
+    type: "framework",
+    docs: "https://flutter.dev/docs",
+    usage: ["Desarrollo de aplicaciones multiplataforma", "Diseño de interfaz de usuario"],
+  },
+  {
+    title: "Firebase",
+    name: "firebase",
+    url: "https://cdn.simpleicons.org/firebase",
+    color: "#FFCA28",
+    description: "Firebase es una plataforma de desarrollo de aplicaciones móviles y web creada por Google. Proporciona una variedad de servicios y herramientas para facilitar el desarrollo rápido y eficiente de aplicaciones, así como también para ayudar en el crecimiento y la administración de las mismas.",
+    type: "plataforma",
+    docs: "https://firebase.google.com/docs",
+    usage: ["Base de datos en tiempo real", "Autenticación", "Hosting"],
+  },
+  {
+    title: "Elixir",
+    name: "elixir",
+    url: "https://cdn.simpleicons.org/elixir",
+    color: "#4B275F",
+    description: "Elixir es un lenguaje de programación funcional y concurrente diseñado para construir aplicaciones escalables y robustas.\nFue creado por José Valim en 2011 y se basa en la máquina virtual de Erlang (BEAM), conocida por su capacidad de manejar sistemas distribuidos y concurrentes de manera eficiente.",
+    type: "lenguaje de programación",
+    docs: "https://elixir-lang.org/getting-started/introduction.html",
+    usage: ["Sistemas distribuidos", "Concurrencia"],
+  },
+  {
+    title: "Git",
+    name: "git",
+    url: "https://cdn.simpleicons.org/git",
+    color: "#F05032",
+    description: "Git es un sistema de control de versiones distribuido ampliamente utilizado en el desarrollo de software. Proporciona una forma de rastrear los cambios en archivos y carpetas a lo largo del tiempo, lo que permite a los desarrolladores colaborar de manera efectiva en proyectos.",
+    type: "herramienta",
+    docs: "https://git-scm.com/doc",
+    usage: ["Desarrollo colaborativo", "Control de versiones"],
+  },
 ]
 
 export const icons: Icon[] = [
@@ -498,6 +598,66 @@ export const icons: Icon[] = [
     name: "php",
     url: "https://cdn.simpleicons.org/php",
     color: "#777BB4",
+    state: "incomplete"
+  },
+  {
+    name: "Svelte",
+    url: "https://cdn.simpleicons.org/svelte",
+    color: "#FF3E00",
+    state: "incomplete"
+  },
+  {
+    name: "google",
+    url: "https://cdn.simpleicons.org/google",
+    color: "#4285F4",
+    state: "incomplete"
+  },
+  {
+    name: "deno",
+    url: "https://cdn.simpleicons.org/deno",
+    color: "#000000",
+    state: "incomplete"
+  },
+  {
+    name: "scala",
+    url: "https://cdn.simpleicons.org/scala",
+    color: "#DC322F",
+    state: "incomplete"
+  },
+  {
+    name: "go",
+    url: "https://cdn.simpleicons.org/go",
+    color: "#00ADD8",
+    state: "incomplete"
+  },
+  {
+    name: "dart",
+    url: "https://cdn.simpleicons.org/dart",
+    color: "#0175C2",
+    state: "incomplete"
+  },
+  {
+    name: "flutter",
+    url: "https://cdn.simpleicons.org/flutter",
+    color: "#02569B",
+    state: "incomplete"
+  },
+  {
+    name: "firebase",
+    url: "https://cdn.simpleicons.org/firebase",
+    color: "#FFCA28",
+    state: "incomplete"
+  },
+  {
+    name: "elixir",
+    url: "https://cdn.simpleicons.org/elixir",
+    color: "#4B275F",
+    state: "incomplete"
+  },
+  {
+    name: "git",
+    url: "https://cdn.simpleicons.org/git",
+    color: "#F05032",
     state: "incomplete"
   },
 ]

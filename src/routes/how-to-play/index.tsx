@@ -19,12 +19,7 @@ export default component$(() => {
         <p class="text-neutral-50 mt-4">A lo largo del juego existen algunos iconos que contienen simbolos como por ejemplo puntos o signos de suma. Un ejemplo es <span class="text-crimson-500 font-bold">C++</span>.</p>
         <p class="text-neutral-50 mt-4">Para poder adividar correctamente estos iconos tendras que escribir el nombre y el simbolo en inglés.</p>
         <p class="fill-crimson-500 text-neutral-50 mt-4">Ejemplo: C++ cplusplus</p>
-        <p class="text-neutral-50 mt-4">A su vez, evita escrebir los nombres con espacios.</p>
-      </article>
-      <article class="flex flex-col text-lg">
-        {/* <h3 class="text-xl font-bold text-crimson-500 text-center mb-4">¿Cómo escribir los simbolos?</h3>
-        <p class="fill-crimson-500 text-neutral-50 mt-4">Punto: . dot</p>
-        <p class="fill-crimson-500 text-neutral-50 mt-4">Suma: + plus</p> */}
+        <p class="text-neutral-50 mt-4">A su vez, evita escribir los nombres con espacios.</p>
       </article>
       <footer>
 
