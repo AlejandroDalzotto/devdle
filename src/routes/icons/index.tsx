@@ -16,7 +16,7 @@ export default component$(() => {
       <article class="flex flex-wrap gap-4 container mx-auto">
         {finishedIcons.map((icon, idx) => {
           return (
-            <IconCard icon={icon} key={idx} />
+            <IconCard tabIndex={idx+1} icon={icon} key={idx} />
           )
         })}
       </article>

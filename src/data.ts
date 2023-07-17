@@ -319,7 +319,7 @@ export const technologiesInformation: IconInformation[] = [
   },
   {
     title: "Svelte",
-    name: "Svelte",
+    name: "svelte",
     url: "https://cdn.simpleicons.org/svelte",
     color: "#FF3E00",
     description: "Svelte es un framework de desarrollo web de código abierto que permite construir aplicaciones web interactivas y de alto rendimiento.\nA diferencia de otros frameworks como React o Vue, Svelte se enfoca en compilar el código durante el proceso de compilación en lugar de ejecutarlo en tiempo de ejecución en el navegador.",
@@ -601,7 +601,7 @@ export const icons: Icon[] = [
     state: "incomplete"
   },
   {
-    name: "Svelte",
+    name: "svelte",
     url: "https://cdn.simpleicons.org/svelte",
     color: "#FF3E00",
     state: "incomplete"
