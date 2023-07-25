@@ -3,7 +3,7 @@ export type TechnologieType = "lenguaje de programación" | "framework" | "libre
 
 export interface Icon {
   name: string
-  url: string
+  url: `https://cdn.simpleicons.org/${string}`
   color: `#${string}`
 }
 
@@ -416,6 +416,86 @@ export const technologiesInformation: IconInformation[] = [
     docs: "https://git-scm.com/doc",
     usage: ["Desarrollo colaborativo", "Control de versiones"],
   },
+  {
+    title: "GitHub",
+    name: "github",
+    url: "https://cdn.simpleicons.org/github",
+    color: "#181717",
+    description: "GitHub es una plataforma web de alojamiento de código fuente, seguimiento de versiones y gestión de proyectos. Permite a los desarrolladores colaborar en proyectos, compartir código y comentarios, y realizar un seguimiento de los cambios en el código.",
+    type: "plataforma",
+    docs: "https://help.github.com/en/articles/about-github",
+    usage: ["Desarrollar software", "Compartir código", "Colaborar con otros desarrolladores"],
+  },
+  {
+    title: "Windows",
+    name: "windows",
+    url: "https://cdn.simpleicons.org/windows",
+    color: "#0078D4",
+    description: "Windows es un sistema operativo gráfico desarrollado por Microsoft. El mismo proporciona una interfaz gráfica de usuario intuitiva que permite a los usuarios interactuar con el software y el hardware de sus dispositivos.",
+    type: "sistema operativo",
+    docs: "https://docs.microsoft.com/en-us/windows",
+    usage: ["Navegar por Internet", "Ejecutar programas", "Jugar juegos"],
+  },
+  {
+    title: "Lua",
+    name: "lua",
+    url: "https://cdn.simpleicons.org/lua",
+    color: "#2C2D72",
+    description: "Lua es un lenguaje de programación multiparadigma, ligero e interpretado. Fue diseñado principalmente para ser utilizado de manera incorporada en aplicaciones. Se caracteriza por ser un lenguaje sencillo de aprender y utilizar, pero a la vez muy potente.",
+    type: "lenguaje de programación",
+    docs: "https://www.lua.org/docs.html",
+    usage: ["Desarrollo de juegos", "Desarrollo de aplicaciones web", "Desarrollo de aplicaciones móviles"],
+  },
+  {
+    title: "R",
+    name: "r",
+    url: "https://cdn.simpleicons.org/r",
+    color: "#276DC3",
+    description: "R es un lenguaje de programación y un entorno de software libre y gratuito para el cálculo estadístico, gráficos y gráficos. Es utilizado por científicos, estadísticos, economistas, financieros y otros profesionales que necesitan realizar análisis estadísticos.",
+    type: "lenguaje de programación",
+    docs: "https://www.r-project.org/",
+    usage: ["Análisis estadístico", "Gráficos", "Machine learning"],
+  },
+  {
+    title: "Ruby",
+    name: "ruby",
+    url: "https://cdn.simpleicons.org/ruby",
+    color: "#CC342D",
+    description: "Ruby es un lenguaje de programación de código abierto orientado a objetos creado por Yukihiro Matsumoto en 1995. Está diseñado para ser fácil de usar y aprender, y tiene una gran comunidad de usuarios y desarrolladores.",
+    type: "lenguaje de programación",
+    docs: "https://ruby-lang.org/en/",
+    usage: ["Desarrollo web", "Desarrollo de aplicaciones de escritorio"],
+  },
+  {
+    title: "Zig",
+    name: "zig",
+    url: "https://cdn.simpleicons.org/zig",
+    color: "#F7A41D",
+    description: "Zig es un lenguaje de programación de propósito general, compilado y de tipado estático, creado por Andrew Kelley en 2016. Está diseñado para ser un reemplazo moderno para el lenguaje C, con el objetivo de ser más pequeño, simple, seguro y optimizado.",
+    type: "lenguaje de programación",
+    docs: "https://ziglang.org/",
+    usage: ["Desarrollo de sistemas embebidos", "Desarrollo de aplicaciones de escritorio", "Desarrollo de juegos"],
+  },
+  {
+    title: "Swift",
+    name: "swift",
+    url: "https://cdn.simpleicons.org/swift",
+    color: "#F05138",
+    description: "Swift es un lenguaje de programación desarrollado por Apple. Fue presentado en 2014 como un reemplazo para el antiguo lenguaje Objective-C, utilizado para el desarrollo de aplicaciones en el ecosistema de Apple.",
+    type: "lenguaje de programación",
+    docs: "https://www.swift.org/documentation/",
+    usage: ["Desarrollo de aplicaciones iOS", "Desarrollo de aplicaciones macOS"],
+  },
+  {
+    title: "Docker",
+    name: "docker",
+    url: "https://cdn.simpleicons.org/docker",
+    color: "#2496ED",
+    description: "Docker es una plataforma de código abierto que permite a los desarrolladores crear, desplegar y ejecutar aplicaciones de manera eficiente utilizando contenedores. Los contenedores son entornos ligeros y portátiles que contienen todo lo necesario para que una aplicación se ejecute, incluyendo el código, las bibliotecas, las dependencias y las configuraciones.",
+    type: "plataforma",
+    docs: "https://docs.docker.com/",
+    usage: ["Ejecución de aplicaciones", "Entornos de microservicios", "Configuración de entornos de desarrollo"],
+  },
 ]
 
 export const icons: Icon[] = [
@@ -618,5 +698,45 @@ export const icons: Icon[] = [
     name: "git",
     url: "https://cdn.simpleicons.org/git",
     color: "#F05032"
+  },
+  {
+    name: "github",
+    url: "https://cdn.simpleicons.org/github",
+    color: "#181717",
+  },
+  {
+    name: "windows",
+    url: "https://cdn.simpleicons.org/windows",
+    color: "#0078D4",
+  },
+  {
+    name: "lua",
+    url: "https://cdn.simpleicons.org/lua",
+    color: "#2C2D72",
+  },
+  {
+    name: "r",
+    url: "https://cdn.simpleicons.org/r",
+    color: "#276DC3",
+  },
+  {
+    name: "ruby",
+    url: "https://cdn.simpleicons.org/ruby",
+    color: "#CC342D",
+  },
+  {
+    name: "zig",
+    url: "https://cdn.simpleicons.org/zig",
+    color: "#F7A41D",
+  },
+  {
+    name: "swift",
+    url: "https://cdn.simpleicons.org/swift",
+    color: "#F05138",
+  },
+  {
+    name: "docker",
+    url: "https://cdn.simpleicons.org/docker",
+    color: "#2496ED",
   },
 ]
