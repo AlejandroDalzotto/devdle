@@ -1,7 +1,6 @@
 import { $, component$, useContext, useSignal } from "@builder.io/qwik";
 import { GameContext } from "~/context/game.context";
-import { icons } from "~/data";
-import { SendIcon } from "./icons";
+import { SendIcon } from "./sprites";
 
 export const GameForm = component$(() => {
 
@@ -17,19 +16,20 @@ export const GameForm = component$(() => {
     if (inputValue.value !== "") {
 
       if (inputValue.value.toLowerCase() === gameState.currentIcon?.name.toLowerCase()) {
+
         gameState.isIconHidden = false
         gameState.streak++
         gameState.state = "success"
-        gameState.currentIcon.state = "finished"
 
-        const iconFinished = icons.find(i => i.name === inputValue.value)
-        iconFinished!.state = "finished"
+        gameState.icons.unshift(inputValue.value)
 
         gameState.points += 1 * gameState.streak
-        gameState.icons = [...gameState.icons].filter(i => i.state === "incomplete" && i.name !== gameState.currentIcon?.name)
+
       } else {
+
         gameState.state = "failed"
         gameState.hearts--
+        gameState.streak = 1
 
         if (gameState.hearts === 0) {
           gameState.userCondition = "defeat"
@@ -39,12 +39,13 @@ export const GameForm = component$(() => {
           gameState.state = "pending"
         }, 2000);
       }
+
       inputValue.value = ''
     }
   });
 
   return (
-    <form preventdefault:submit onSubmit$={handleGameResult} class="flex gap-x-2 my-10">
+    <form preventdefault: submit onSubmit$={handleGameResult} class="flex gap-x-2 my-10">
       <input
         disabled={!gameState.isIconHidden}
         onInput$={handleChange}

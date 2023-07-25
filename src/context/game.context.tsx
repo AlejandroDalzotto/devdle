@@ -6,7 +6,7 @@ export interface GameState {
   currentIcon: Icon | undefined
   isIconHidden: boolean
   state: "pending" | "failed" | "success",
-  icons: Icon[]
+  icons: string[]
   hearts: 0 | 1 | 2 | 3
   userCondition: "playing" | "victory" | "defeat"
   streak: number

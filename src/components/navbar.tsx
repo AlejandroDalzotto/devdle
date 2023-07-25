@@ -1,6 +1,6 @@
 import { $, component$, useSignal } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
-import { BarsIcon, GithubIcon, HomeIcon, HowToPlayIcon, IconsPageIcon } from './icons';
+import { BarsIcon, GithubIcon, HomeIcon, HowToPlayIcon, IconsPageIcon } from './sprites';
 
 export const Navbar = component$(() => {
 

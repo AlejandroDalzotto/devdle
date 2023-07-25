@@ -5,7 +5,6 @@ export interface Icon {
   name: string
   url: string
   color: `#${string}`
-  state: "finished" | "incomplete",
 }
 
 export interface IconInformation extends Omit<Icon, "state"> {
@@ -424,240 +423,200 @@ export const icons: Icon[] = [
     name: "dotnet",
     url: "https://cdn.simpleicons.org/dotnet",
     color: "#512BD4",
-    state: "incomplete"
   },
   {
     name: "javascript",
     url: "https://cdn.simpleicons.org/javascript",
     color: "#F7DF1E",
-    state: "incomplete"
   },
   {
     name: "react",
     url: "https://cdn.simpleicons.org/react",
-    color: "#61DAFB",
-    state: "incomplete"
+    color: "#61DAFB"
   },
   {
     name: "angular",
     url: "https://cdn.simpleicons.org/angular",
-    color: "#DD0031",
-    state: "incomplete"
+    color: "#DD0031"
   },
   {
     name: "vuejs",
     url: "https://cdn.simpleicons.org/vuedotjs",
     color: "#4FC08D",
-    state: "incomplete"
   },
   {
     name: "vercel",
     url: "https://cdn.simpleicons.org/vercel",
-    color: "#000000",
-    state: "incomplete"
+    color: "#000000"
   },
   {
     name: "spring",
     url: "https://cdn.simpleicons.org/spring",
-    color: "#6DB33F",
-    state: "incomplete"
+    color: "#6DB33F"
   },
   {
     name: "testinglibrary",
     url: "https://cdn.simpleicons.org/testinglibrary",
-    color: "#E33332",
-    state: "incomplete"
+    color: "#E33332"
   },
   {
     name: "dotenv",
     url: "https://cdn.simpleicons.org/dotenv",
-    color: "#ECD53F",
-    state: "incomplete"
+    color: "#ECD53F"
   },
   {
     name: "nextjs",
     url: "https://cdn.simpleicons.org/nextdotjs",
-    color: "#000000",
-    state: "incomplete"
+    color: "#000000"
   },
   {
     name: "nestjs",
     url: "https://cdn.simpleicons.org/nestjs",
-    color: "#E0234E",
-    state: "incomplete"
+    color: "#E0234E"
   },
   {
     name: "netlify",
     url: "https://cdn.simpleicons.org/netlify",
-    color: "#00C7B7",
-    state: "incomplete"
+    color: "#00C7B7"
   },
   {
     name: "kotlin",
     url: "https://cdn.simpleicons.org/kotlin",
-    color: "#7F52FF",
-    state: "incomplete"
+    color: "#7F52FF"
   },
   {
     name: "notion",
     url: "https://cdn.simpleicons.org/notion",
-    color: "#000000",
-    state: "incomplete"
+    color: "#000000"
   },
   {
     name: "tailwindcss",
     url: "https://cdn.simpleicons.org/tailwindcss",
-    color: "#06B6D4",
-    state: "incomplete"
+    color: "#06B6D4"
   },
   {
     name: "bootstrap",
     url: "https://cdn.simpleicons.org/bootstrap",
-    color: "#7952B3",
-    state: "incomplete"
+    color: "#7952B3"
   },
   {
     name: "nuxtjs",
     url: "https://cdn.simpleicons.org/nuxtdotjs",
-    color: "#00DC82",
-    state: "incomplete"
+    color: "#00DC82"
   },
   {
     name: "linux",
     url: "https://cdn.simpleicons.org/linux",
-    color: "#FCC624",
-    state: "incomplete"
+    color: "#FCC624"
   },
   {
     name: "ubuntu",
     url: "https://cdn.simpleicons.org/ubuntu",
-    color: "#E95420",
-    state: "incomplete"
+    color: "#E95420"
   },
   {
     name: "nodejs",
     url: "https://cdn.simpleicons.org/nodedotjs",
-    color: "#339933",
-    state: "incomplete"
+    color: "#339933"
   },
   {
     name: "notepadplusplus",
     url: "https://cdn.simpleicons.org/notepadplusplus",
-    color: "#90E59A",
-    state: "incomplete"
+    color: "#90E59A"
   },
   {
     name: "typescript",
     url: "https://cdn.simpleicons.org/typescript",
-    color: "#3178C6",
-    state: "incomplete"
+    color: "#3178C6"
   },
   {
     name: "npm",
     url: "https://cdn.simpleicons.org/npm",
-    color: "#CB3837",
-    state: "incomplete"
+    color: "#CB3837"
   },
   {
     name: "pnpm",
     url: "https://cdn.simpleicons.org/pnpm",
-    color: "#F69220",
-    state: "incomplete"
+    color: "#F69220"
   },
   {
     name: "postgresql",
     url: "https://cdn.simpleicons.org/postgresql",
-    color: "#4169E1",
-    state: "incomplete"
+    color: "#4169E1"
   },
   {
     name: "mongodb",
     url: "https://cdn.simpleicons.org/mongodb",
-    color: "#47A248",
-    state: "incomplete"
+    color: "#47A248"
   },
   {
     name: "python",
     url: "https://cdn.simpleicons.org/python",
-    color: "#3776AB",
-    state: "incomplete"
+    color: "#3776AB"
   },
   {
     name: "cplusplus",
     url: "https://cdn.simpleicons.org/cplusplus",
-    color: "#00599C",
-    state:"incomplete"
+    color: "#00599C"
   },
   {
     name: "rust",
     url: "https://cdn.simpleicons.org/rust",
-    color: "#000000",
-    state: "incomplete"
+    color: "#000000"
   },
   {
     name: "php",
     url: "https://cdn.simpleicons.org/php",
-    color: "#777BB4",
-    state: "incomplete"
+    color: "#777BB4"
   },
   {
     name: "svelte",
     url: "https://cdn.simpleicons.org/svelte",
-    color: "#FF3E00",
-    state: "incomplete"
+    color: "#FF3E00"
   },
   {
     name: "google",
     url: "https://cdn.simpleicons.org/google",
-    color: "#4285F4",
-    state: "incomplete"
+    color: "#4285F4"
   },
   {
     name: "deno",
     url: "https://cdn.simpleicons.org/deno",
-    color: "#000000",
-    state: "incomplete"
+    color: "#000000"
   },
   {
     name: "scala",
     url: "https://cdn.simpleicons.org/scala",
-    color: "#DC322F",
-    state: "incomplete"
+    color: "#DC322F"
   },
   {
     name: "go",
     url: "https://cdn.simpleicons.org/go",
-    color: "#00ADD8",
-    state: "incomplete"
+    color: "#00ADD8"
   },
   {
     name: "dart",
     url: "https://cdn.simpleicons.org/dart",
-    color: "#0175C2",
-    state: "incomplete"
+    color: "#0175C2"
   },
   {
     name: "flutter",
     url: "https://cdn.simpleicons.org/flutter",
-    color: "#02569B",
-    state: "incomplete"
+    color: "#02569B"
   },
   {
     name: "firebase",
     url: "https://cdn.simpleicons.org/firebase",
-    color: "#FFCA28",
-    state: "incomplete"
+    color: "#FFCA28"
   },
   {
     name: "elixir",
     url: "https://cdn.simpleicons.org/elixir",
-    color: "#4B275F",
-    state: "incomplete"
+    color: "#4B275F"
   },
   {
     name: "git",
     url: "https://cdn.simpleicons.org/git",
-    color: "#F05032",
-    state: "incomplete"
+    color: "#F05032"
   },
 ]

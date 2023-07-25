@@ -1,11 +1,13 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useContext } from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
 import { IconCard } from '~/components/icon-card';
+import { GameContext } from '~/context/game.context';
 import { icons } from '~/data';
 
 export default component$(() => {
 
-  const finishedIcons = [...icons].filter(i => i.state === "finished")
+  const gameState = useContext(GameContext)
+  const finishedIcons = icons.filter(i => gameState.icons.includes(i.name))
 
   return (
     <section class="p-4 flex flex-col gap-y-10">

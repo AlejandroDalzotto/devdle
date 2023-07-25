@@ -10,15 +10,14 @@ export const GameModalDefeated = component$(() => {
     gameState.state = "pending"
     gameState.userCondition = "playing"
     gameState.hearts = 3
-    gameState.icons = icons
+    gameState.icons = []
 
-    const incompleteIcons = [...icons].filter(i => i.state === "incomplete")
-    const randomIndex = Math.floor(Math.random() * incompleteIcons.length)
-    const initialIcon = incompleteIcons[randomIndex]
+    const randomIndex = Math.floor(Math.random() * icons.length)
+    const initialIcon = icons[randomIndex]
     gameState.currentIcon = initialIcon
   })
 
-  const iconsDiscovered = icons.length - gameState.icons.length
+  const iconsDiscovered = gameState.icons.length
 
   return (
     <div class="animate-fade duration-75 h-screen w-screen flex items-center justify-center bg-black/30 absolute z-10">

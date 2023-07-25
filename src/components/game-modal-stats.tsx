@@ -1,7 +1,6 @@
 import { type Signal, component$, useContext } from "@builder.io/qwik";
 import { GameContext } from "~/context/game.context";
-import { icons } from "~/data";
-import { HeartIcon } from "./icons";
+import { HeartIcon } from "./sprites";
 
 interface Props {
   signal: Signal<boolean>
@@ -11,7 +10,7 @@ export const GameModalStats = component$(({ signal }: Props) => {
 
   const gameState = useContext(GameContext)
 
-  const iconsDiscovered = icons.length - gameState.icons.length
+  const iconsDiscovered = gameState.icons.length
 
   return (
     <div onClick$={() => signal.value = false} class="animate-fade duration-75 h-screen w-screen flex items-center justify-center bg-black/30 absolute z-10">
