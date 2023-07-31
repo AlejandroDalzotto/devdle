@@ -1,21 +1,38 @@
-import { Slot, component$, useContextProvider, useStore } from "@builder.io/qwik";
+import { Slot, component$, useContextProvider, useStore, useTask$ } from "@builder.io/qwik";
 import { GameContext, type GameState } from "./game.context";
-import { icons } from "~/data";
+import { server$ } from "@builder.io/qwik-city";
+import { type Icon } from "~/interfaces";
+
+const fetchIcons = server$(async () => {
+
+  const data = await fetch('https://devdle-server.onrender.com/api/icons').then(res => res.json()) as Icon[]
+
+  return data
+})
 
 export const GameProvider = component$(() => {
-  
-  const randomIndex = Math.floor(Math.random() * icons.length)
-  const initialIcon = icons[randomIndex]
 
   const useInitialData = useStore<GameState>({
     isIconHidden: true,
     points: 0,
-    currentIcon: initialIcon,
+    currentIcon: undefined,
     state: "pending",
-    icons: [],
+    iconsDiscovered: [],
     hearts: 3,
     userCondition: "playing",
-    streak: 1
+    streak: 1,
+    allIcons: []
+  })
+
+  useTask$(async () => {
+
+    const icons = await fetchIcons()
+
+    const randomIndex = Math.floor(Math.random() * icons.length)
+    const initialIcon = icons[randomIndex]
+
+    useInitialData.allIcons = icons
+    useInitialData.currentIcon = initialIcon
   })
 
   useContextProvider(GameContext, useInitialData)

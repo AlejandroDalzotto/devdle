@@ -1,5 +1,5 @@
 import { $, type QwikKeyboardEvent, component$, useSignal } from "@builder.io/qwik";
-import { type Icon } from "~/data";
+import { type Icon } from "~/interfaces";
 import { ModalInformation } from "./modal-information";
 
 interface Props {

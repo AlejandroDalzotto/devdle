@@ -9,7 +9,7 @@ export default component$(() => {
       </header>
       <article class="flex flex-col text-lg">
         <p class="text-neutral-50">El objetivo del juego es simple, adivinar el nombre del icono oculto. Estos iconos pueden abarcar entre: <span class="text-crimson-500 font-bold">
-            Lenguajes de programación, Frameworks, Librerías/Bibliotecas de conocimiento general, Plataformas, Herramientas, Sistemas operativos, Entornos de ejecución, Bases de datos
+            Lenguajes de programación, Frameworks, Librerías/Bibliotecas de conocimiento general, Plataformas, Herramientas, Sistemas operativos, Entornos de ejecución, Bases de datos y Tecnologías web.
           </span>
         </p>
 

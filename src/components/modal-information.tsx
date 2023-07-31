@@ -1,7 +1,7 @@
-import { type Signal, component$ } from "@builder.io/qwik";
-import { technologiesInformation } from "~/data";
+import { type Signal, component$, useContext } from "@builder.io/qwik";
 import { Image } from "@unpic/qwik";
 import { Link } from "@builder.io/qwik-city";
+import { GameContext } from "~/context/game.context";
 
 interface Props {
   iconName: string
@@ -10,7 +10,8 @@ interface Props {
 
 export const ModalInformation = component$(({ iconName, signal }: Props) => {
 
-  const item = technologiesInformation.find(i => i.name === iconName)
+  const gameState = useContext(GameContext)
+  const item = gameState.allIcons.find(i => i.name === iconName)
 
   return (
     <div onClick$={() => signal.value = false} class="animate-fade duration-75 h-screen w-screen flex items-center justify-center bg-black/30 absolute z-10 -top-20 left-0">
@@ -18,7 +19,7 @@ export const ModalInformation = component$(({ iconName, signal }: Props) => {
         <header class="flex items-center justify-between w-full relative">
           <div>
             <h3 class="text-neutral-800 text-2xl font-bold">{item?.title}</h3>
-            <span class="text-neutral-600 capitalize">{item?.type}</span>
+            <span class="text-neutral-600 capitalize">{item?.icon_type}</span>
           </div>
           <Image
             class="w-20 h-20"

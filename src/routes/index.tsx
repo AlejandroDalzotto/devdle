@@ -8,7 +8,6 @@ import { GameModalDefeated } from "~/components/game-modal-defeated";
 import { GameModalVictory } from "~/components/game-modal-victory";
 import { ArrowRightIcon, HeartIcon, InfoIcon, StatisticsIcon } from "~/components/sprites";
 import { GameModalStats } from "~/components/game-modal-stats";
-import { icons } from "~/data";
 
 export default component$(() => {
 
@@ -19,10 +18,10 @@ export default component$(() => {
   const changeIconToNext = $(() => {
     gameState.isIconHidden = true
     setTimeout(() => {
-      if (gameState.icons.length !== icons.length) {
+      if (gameState.iconsDiscovered.length !== gameState.allIcons.length) {
         gameState.state = "pending"
 
-        const undiscoveredIcons = icons.filter(i => !gameState.icons.includes(i.name))
+        const undiscoveredIcons = gameState.allIcons.filter(i => !gameState.iconsDiscovered.includes(i.name))
         const randomIndex = Math.floor(Math.random() * undiscoveredIcons.length)
         gameState.currentIcon = undiscoveredIcons[randomIndex]
 
@@ -35,7 +34,7 @@ export default component$(() => {
       {showModalInformation.value && <ModalInformation signal={showModalInformation} iconName={gameState.currentIcon!.name} />}
       {showModalStats.value && <GameModalStats signal={showModalStats} />}
       {gameState.hearts === 0 && <GameModalDefeated />}
-      {gameState.icons.length === icons.length && <GameModalVictory />}
+      {gameState.iconsDiscovered.length === gameState.allIcons.length && <GameModalVictory />}
       <div class="w-full p-4 relative flex flex-col items-center flex-grow">
         <div class="h-14 w-full flex justify-end">
           <button
@@ -51,7 +50,7 @@ export default component$(() => {
           <GameImage url={gameState.currentIcon.url} isHidden={gameState.isIconHidden} />
 
         )}
-        {gameState.icons.length === icons.length && <p class="text-neutral-800 font-medium text-center text-xl w-52 h-52">¡Vaya! Parece que te has completado todo lo que habia aquí, eres muy bueno</p>}
+        {gameState.iconsDiscovered.length === gameState.allIcons.length && <p class="text-neutral-800 font-medium text-center text-xl w-52 h-52">¡Vaya! Parece que te has completado todo lo que habia aquí, eres muy bueno</p>}
       </div>
       <div class="flex gap-x-3 items-center my-10 w-full justify-center">
         {Array.from({ length: gameState.hearts }, (_, idx) => {

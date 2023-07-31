@@ -10,7 +10,7 @@ export const GameModalStats = component$(({ signal }: Props) => {
 
   const gameState = useContext(GameContext)
 
-  const iconsDiscovered = gameState.icons.length
+  const iconsDiscovered = gameState.iconsDiscovered.length
 
   return (
     <div onClick$={() => signal.value = false} class="animate-fade duration-75 h-screen w-screen flex items-center justify-center bg-black/30 absolute z-10">

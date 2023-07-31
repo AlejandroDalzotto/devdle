@@ -21,7 +21,7 @@ export const GameForm = component$(() => {
         gameState.streak++
         gameState.state = "success"
 
-        gameState.icons.unshift(inputValue.value)
+        gameState.iconsDiscovered.unshift(inputValue.value)
 
         gameState.points += 1 * gameState.streak
 

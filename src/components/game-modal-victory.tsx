@@ -1,6 +1,5 @@
 import { $, component$, useContext } from "@builder.io/qwik";
 import { GameContext } from "~/context/game.context";
-import { icons } from "~/data";
 
 export const GameModalVictory = component$(() => {
 
@@ -10,14 +9,14 @@ export const GameModalVictory = component$(() => {
     gameState.state = "pending"
     gameState.userCondition = "playing"
     gameState.hearts = 3
-    gameState.icons = []
+    gameState.iconsDiscovered = []
 
-    const randomIndex = Math.floor(Math.random() * icons.length)
-    const initialIcon = icons[randomIndex]
+    const randomIndex = Math.floor(Math.random() * gameState.allIcons.length)
+    const initialIcon = gameState.allIcons[randomIndex]
     gameState.currentIcon = initialIcon
   })
 
-  const iconsDiscovered = gameState.icons.length
+  const iconsDiscovered = gameState.iconsDiscovered.length
 
   return (
     <div class="animate-fade duration-75 h-screen w-screen flex items-center justify-center bg-black/30 absolute z-10">
